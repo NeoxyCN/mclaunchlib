@@ -3,4 +3,4 @@
 
 void hello();
 
-#endif //MCLAUNCHLIB_MCLAUNCHLIB_H
+#endif

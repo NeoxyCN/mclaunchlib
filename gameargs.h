@@ -1,0 +1,8 @@
+//
+// Created by Neoxy on 2023/6/23.
+//
+
+#ifndef MCLAUNCHLIB_GAMEARGS_H
+#define MCLAUNCHLIB_GAMEARGS_H
+
+#endif //MCLAUNCHLIB_GAMEARGS_H
