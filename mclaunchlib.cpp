@@ -2,9 +2,19 @@
 
 #include <iostream>
 
+#include "jvm.h"
 #include "utils.h"
 
 void test() {
+    JVM jvm;
+
+    /*
+    jvm.SetClasspath()
+    .SetClasspath()
+    .SetClasspath()
+    .SetHeapDumpPath();
+     */
+
     if (utils::FindJava() == "none") {
 
     } else {

@@ -5,18 +5,36 @@
 #ifndef MCLAUNCHLIB_JVM_H
 #define MCLAUNCHLIB_JVM_H
 
-class JVM{
+#include <string>
+
+class JVM {
 public:
-    void SetLibraryPath();
-    void SetLauncherName();
-    void SetLauncherVersion();
-    void SetClasspath();
-    void SetOSName();
-    void SetHeapDumpPath();
-    void SetStackSize();
+    std::string args;
+
+    JVM &SetLibraryPath(std::string path);
+
+    JVM &SetLauncherName(std::string name);
+
+    JVM &SetLauncherVersion(std::string version);
+
+    JVM &SetClasspath(std::string classpath);
+
+    JVM &SetOSName(std::string name, std::string version);
+
+    JVM &SetHeapDumpPath();
+
+    JVM &SetStackSize(int size);
+
+    std::string GetArgs();
+
+private:
+    void AddSpace();
+
 #ifdef __APPLE__
-    void StartOnFirstThread();
+    JVM& StartOnFirstThread();
 #endif
+
+    JVM();
 };
 
 #endif
