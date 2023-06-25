@@ -14,7 +14,7 @@ JVM &JVM::SetLibraryPath(std::string path) {
     return *this;
 }
 
-JVM &JVM::SetLauncherName(std::string name) {
+JVM &JVM::SetLauncherName(const std::string name) {
     args.append("-Dminecraft.launcher.brand=");
     args.append(name);
     AddSpace();
@@ -56,6 +56,22 @@ JVM &JVM::SetStackSize(int size) {
     args.append(std::to_string(size));
     args.append("M");
     return *this;
+}
+
+JVM &JVM::SetConfigurationFile(std::string path){
+
+}
+
+JVM &JVM::UseG1GC(bool enable){
+    if (enable){
+
+    }else{
+
+    }
+}
+
+JVM &JVM::SetMaxMemory(int size){
+
 }
 
 #ifdef __APPLE__

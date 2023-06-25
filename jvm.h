@@ -25,8 +25,15 @@ public:
 
     JVM &SetStackSize(int size);
 
+    JVM &SetConfigurationFile(std::string path);
+
+    JVM &UseG1GC(bool enable);
+
+    JVM &SetMaxMemory(int size);
+
     std::string GetArgs();
 
+    JVM();
 private:
     void AddSpace();
 
@@ -34,7 +41,7 @@ private:
     JVM& StartOnFirstThread();
 #endif
 
-    JVM();
+
 };
 
 #endif
