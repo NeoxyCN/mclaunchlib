@@ -64,15 +64,23 @@ JVM &JVM::SetConfigurationFile(std::string path){
 
 JVM &JVM::UseG1GC(bool enable){
     if (enable){
-
-    }else{
-
+        args.append("-XX:+UseG1GC");
+        return *this;
+    }else {
+        return *this;
     }
 }
 
 JVM &JVM::SetMaxMemory(int size){
-
+    args.append("-Xmx");
+    args.append(std::to_string(size));
+    args.append("M");
+    return *this;
 }
+JVM::JVM(void) {
+    args = " ";
+}
+
 
 #ifdef __APPLE__
 JVM& JVM::StartOnFirstThread(){
@@ -81,10 +89,6 @@ JVM& JVM::StartOnFirstThread(){
     return *this;
 }
 #endif
-
-JVM::JVM(void) {
-    args = " ";
-}
 
 std::string JVM::GetArgs() {
     return args;
